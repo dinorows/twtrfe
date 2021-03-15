@@ -61,7 +61,7 @@ const SignUp = () => {
   function handleSubmit(event) {
     event.preventDefault()
 
-    // fwo: register new user!
+    // register new user!
     //.. return userid
 
     // save more: name, group, userid
