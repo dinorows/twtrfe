@@ -113,7 +113,7 @@ const Compose = () => {
     const img_index = Math.floor(Math.random() * 100) + 1 ;
     const img_url = 'https://randomuser.me/api/portraits/' + img_gender + '/' + img_index.toString() + '.jpg';
     
-    postTweet(user, tweet, priv, img_url);  
+    postTweet(username, tweet, priv, img_url);  
     alert('tweet posted!');
   }
 
