@@ -74,7 +74,7 @@ const Compose = () => {
           },
           body: JSON.stringify(paramdict)
       }
-      const response = await fetch("http://localhost:5000/tweet", config);
+      const response = await fetch("http://0.0.0.0:5000/tweet", config);
       //const json = await response.json()
       if (response.ok) {
           //return json
