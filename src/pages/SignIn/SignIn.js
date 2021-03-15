@@ -60,7 +60,7 @@ const SignIn = () => {
   function handleSubmit(event) {
     event.preventDefault()
 
-    // fwo: verify user/pwd
+    // verify user/pwd
     //.. return userid
 
     // save more: name, group, userid
