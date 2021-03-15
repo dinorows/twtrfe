@@ -51,9 +51,10 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const Compose = () => {
-  const classes = useStyles()
-  const history = useHistory()
-  const [tweet, setTweet] = useState('')
+  const classes = useStyles();
+  const history = useHistory();
+  const [tweet, setTweet] = useState('');
+  const [username, setUsername] = useState('');
 
   // async launch POST
   const postTweet = async (user, description, priv, pic) => {
@@ -103,10 +104,14 @@ const Compose = () => {
     event.preventDefault()
 
     const priv = true;
-    const user = 'Elon Musk';
-    const img_gender = 'men'
-    const img_index = '77';
-    const img_url = 'https://randomuser.me/api/portraits/' + img_gender + '/' + img_index + '.jpg';
+    //const username = 'Elon Musk';
+    const myArray = [
+      "women",
+      "men"
+    ];
+    const img_gender = myArray[Math.floor(Math.random()*myArray.length)];
+    const img_index = Math.floor(Math.random() * 100) + 1 ;
+    const img_url = 'https://randomuser.me/api/portraits/' + img_gender + '/' + img_index.toString() + '.jpg';
     
     postTweet(user, tweet, priv, img_url);  
     alert('tweet posted!');
@@ -120,6 +125,19 @@ const Compose = () => {
             {'Compose Tweet'}
           </Typography>
           <form className={classes.form} onSubmit={handleSubmit} noValidate>
+            <TextField
+              value={username}
+              onInput={(e) => setUsername(e.target.value)}
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="username"
+              label={'User Name'}
+              name="username"
+              autoComplete="username"
+              autoFocus
+            />
             <TextField
               value={tweet}
               onInput={(e) => setTweet(e.target.value)}
